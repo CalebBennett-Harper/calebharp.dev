@@ -155,7 +155,7 @@ const IndexPage = () => {
               transition={{ delay: 6.5 }}
             >
               <a
-                href="https://github.com/CalebBennett"
+                href="https://github.com/CalebBennett-Harper"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
