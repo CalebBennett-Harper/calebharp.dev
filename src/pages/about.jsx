@@ -125,7 +125,7 @@ const About = () => {
                 
                 <div className="pt-4 border-t border-blue-500/20">
                   <p className="text-blue-200 italic">
-                    "I'm passionate about building systems that are both technically sound and human-centered."
+                    "I found my way into tech by focusing on people first—now, I build systems that do the same."
                   </p>
                 </div>
               </motion.div>
@@ -246,7 +246,7 @@ const About = () => {
 
                 <div className="p-4 bg-gradient-to-b from-gray-900 to-gray-950">
                   <p className="text-sm">
-                    <span className="font-medium text-white">caleb.bennett.harper</span>{" "}
+                    <span className="font-medium text-white">caleb.harp</span>{" "}
                     <span className="text-gray-300">When I'm not coding, you'll find me exploring new places, and connecting with amazing people. Life is about balance!</span> 
                     <span className="text-blue-400"> #lifebeyondcode #exploration #balance</span>
                   </p>
