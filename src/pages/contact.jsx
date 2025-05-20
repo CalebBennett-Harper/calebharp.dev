@@ -155,7 +155,7 @@ const Contact = () => {
               >
                 <h2 className="text-2xl font-bold mb-4 text-blue-300">Let's Work Together</h2>
                 <p className="text-gray-300 mb-6">
-                  I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                  Feel free to reach out, I'm always open to discussing new projects, creative ideas!
                 </p>
                 
                 <motion.a
