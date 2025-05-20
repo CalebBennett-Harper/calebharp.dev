@@ -12,14 +12,6 @@ import morganStanleyLogo from "../images/companyLogos/morganstanley.jpeg";
 import nvidiaLogo from "../images/companyLogos/nvidia.jpeg";
 import phillyLogo from "../images/companyLogos/philly.jpeg";
 
-const titleVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
-};
-
 const ExperienceCard = ({ company, position, type, duration, location, skills, onsite, program, additionalPositions }) => {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -157,98 +149,92 @@ const ExperienceCard = ({ company, position, type, duration, location, skills, o
   );
 };
 
-const Experiences = () => {
-  const experiences = [
-    {
-      company: "Sixth Street",
-      position: "Incoming Software Engineer Intern",
-      type: "Internship",
-      duration: "Apr 2025 - Present",
-      location: "New York City Metropolitan Area",
-      onsite: "On-site",
-      program: "Summer 2025",
-      additionalPositions: [
-        {
-          position: "Early Insights Program",
-          duration: "Mar 2025 - Mar 2025 · 1 mo",
-          location: "San Francisco, California, United States",
-          skills: "Asset Management · Financial Modeling · Accounting · Financial Analysis"
-        }
-      ]
-    },
-    {
-      company: "Morgan Stanley",
-      position: "Sales & Trading Program",
-      duration: "Jan 2025 - Jan 2025 · 1 mo",
-      location: "Remote",
-      skills: "Communication · Machine Learning · Problem Solving · Equity Trading",
-      program: "Early Insights"
-    },
-    {
-      company: "NVIDIA",
-      position: "Ignite Intern",
-      type: "Internship",
-      duration: "May 2024 - Aug 2024 · 4 mos",
-      location: "Santa Clara, California, United States",
-      onsite: "On-site",
-      skills: "Machine Learning · Mental Health First Aid · Mental Health · Mental Health Advocacy · Presentation Skills · Project Management"
-    },
-    {
-      company: "Jane Street",
-      position: "FOCUS",
-      duration: "May 2024 - May 2024 · 1 mo",
-      location: "New York City Metropolitan Area",
-      onsite: "On-site",
-      skills: "Problem Solving · OCaml · Coding Experience · Market Analysis",
-      program: "FOCUS"
-    },
-    {
-      company: "Google",
-      position: "Google CS Research Mentorship Program (CSRMP)",
-      type: "Apprenticeship",
-      duration: "Sep 2023 - Dec 2023 · 4 mos",
-      location: "Remote",
-      skills: "Coding Experience · Python (Programming Language) · Java · Machine Learning",
-      program: "CS Research Mentorship Program – Google Research"
-    },
-    {
-      company: "Bank of America",
-      position: "Bank of America Student Leader",
-      type: "Internship",
-      duration: "Jun 2023 - Aug 2023 · 3 mos",
-      location: "Philadelphia, Pennsylvania, United States",
-      onsite: "On-site",
-      skills: "Nonprofit Organizations · Nonprofit Leadership · Communication · Entrepreneurship · Public Speaking · Community Development",
-      program: "Philadelphia Bank of America Student Leaders"
-    },
-    {
-      company: "Philadelphia Youth Network",
-      position: "Human Resources Intern",
-      type: "Internship",
-      duration: "Jun 2023 - Aug 2023 · 3 mos",
-      location: "Philadelphia, Pennsylvania, United States",
-      onsite: "On-site",
-      skills: "Nonprofit Organizations · Project Management · Nonprofit Leadership · Communication · Human Resources (HR) · Microsoft Office"
-    }
-  ];
+const experiences = [
+  {
+    company: "Sixth Street",
+    position: "Incoming Software Engineer Intern",
+    type: "Internship",
+    duration: "Apr 2025 - Present",
+    location: "New York City Metropolitan Area",
+    onsite: "On-site",
+    program: "Summer 2025",
+    additionalPositions: [
+      {
+        position: "Early Insights Program",
+        duration: "Mar 2025 - Mar 2025 · 1 mo",
+        location: "San Francisco, California, United States",
+        skills: "Asset Management · Financial Modeling · Accounting · Financial Analysis"
+      }
+    ]
+  },
+  {
+    company: "Morgan Stanley",
+    position: "Sales & Trading Program",
+    duration: "Jan 2025 - Jan 2025 · 1 mo",
+    location: "Remote",
+    skills: "Communication · Machine Learning · Problem Solving · Equity Trading",
+    program: "Early Insights"
+  },
+  {
+    company: "NVIDIA",
+    position: "Ignite Intern",
+    type: "Internship",
+    duration: "May 2024 - Aug 2024 · 4 mos",
+    location: "Santa Clara, California, United States",
+    onsite: "On-site",
+    skills: "Machine Learning · Mental Health First Aid · Mental Health · Mental Health Advocacy · Presentation Skills · Project Management"
+  },
+  {
+    company: "Jane Street",
+    position: "FOCUS",
+    duration: "May 2024 - May 2024 · 1 mo",
+    location: "New York City Metropolitan Area",
+    onsite: "On-site",
+    skills: "Problem Solving · OCaml · Coding Experience · Market Analysis",
+    program: "FOCUS"
+  },
+  {
+    company: "Google",
+    position: "Google CS Research Mentorship Program (CSRMP)",
+    type: "Apprenticeship",
+    duration: "Sep 2023 - Dec 2023 · 4 mos",
+    location: "Remote",
+    skills: "Coding Experience · Python (Programming Language) · Java · Machine Learning",
+    program: "CS Research Mentorship Program – Google Research"
+  },
+  {
+    company: "Bank of America",
+    position: "Bank of America Student Leader",
+    type: "Internship",
+    duration: "Jun 2023 - Aug 2023 · 3 mos",
+    location: "Philadelphia, Pennsylvania, United States",
+    onsite: "On-site",
+    skills: "Nonprofit Organizations · Nonprofit Leadership · Communication · Entrepreneurship · Public Speaking · Community Development",
+    program: "Philadelphia Bank of America Student Leaders"
+  },
+  {
+    company: "Philadelphia Youth Network",
+    position: "Human Resources Intern",
+    type: "Internship",
+    duration: "Jun 2023 - Aug 2023 · 3 mos",
+    location: "Philadelphia, Pennsylvania, United States",
+    onsite: "On-site",
+    skills: "Nonprofit Organizations · Project Management · Nonprofit Leadership · Communication · Human Resources (HR) · Microsoft Office"
+  }
+];
 
+const Experiences = () => {
   return (
     <div className="min-h-screen relative overflow-hidden bg-black">
       <Layout>
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 py-16">
-          <motion.div
-            className="text-center mb-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={titleVariants}
-          >
+          <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4 tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 font-serif italic">
                 <FlyInText text="Professional Experiences" delay={0} speed={50} />
               </span>
             </h1>
-          </motion.div>
+          </div>
 
           <div className="w-full max-w-5xl">
             {experiences.map((exp, index) => (
