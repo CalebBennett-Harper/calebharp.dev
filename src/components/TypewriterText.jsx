@@ -44,6 +44,11 @@ const FlyInText = ({ text, delay = 0, speed = 50 }) => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
       className="inline-block"
+      style={{
+        willChange: "opacity, transform",
+        backfaceVisibility: "hidden",
+        opacity: 1,
+      }}
     >
       {characters.map((character, index) => (
         <motion.span
