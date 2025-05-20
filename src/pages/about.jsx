@@ -2,9 +2,11 @@ import * as React from "react";
 import Layout from "../components/Layout";
 import FlyInText from "../components/TypewriterText";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaHeart, FaRegComment, FaRegBookmark, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {
+  FaHeart, FaRegComment, FaRegBookmark, FaCode,
+  FaChessKnight, FaSkating, FaPaintBrush, FaLaptopCode
+} from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
-import { FaCode, FaChessKnight, FaSkating, FaPaintBrush, FaLaptopCode } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { SiNvidia, SiGoogle } from "react-icons/si";
 import profileImage from "../images/professional/calebNvidia.jpeg";
@@ -12,6 +14,15 @@ import profileImage2 from "../images/professional/calebNvidiaJensen.jpeg";
 import profileImage3 from "../images/professional/calebNvidiaBoss.jpeg";
 import profileImage4 from "../images/professional/calebIG.jpg";
 import imageLogo from "../images/professional/calebisCool.jpg";
+
+const titleVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.4, ease: "easeOut" }
+  }
+};
+
 const About = () => {
   const images = [
     profileImage,
@@ -19,57 +30,47 @@ const About = () => {
     profileImage3,
     profileImage4,
   ];
-  
+
   const [[currentImageIndex, direction], setImage] = React.useState([0, 0]);
   const [isLiked, setIsLiked] = React.useState(false);
   const [likeCount, setLikeCount] = React.useState(351);
-  
+
   const imageIndex = React.useMemo(() => {
     return ((currentImageIndex % images.length) + images.length) % images.length;
   }, [currentImageIndex, images.length]);
-  
-  const nextImage = () => {
-    setImage([currentImageIndex + 1, 1]);
-  };
-  
-  const prevImage = () => {
-    setImage([currentImageIndex - 1, -1]);
-  };
-  
+
+  const nextImage = () => setImage([currentImageIndex + 1, 1]);
+  const prevImage = () => setImage([currentImageIndex - 1, -1]);
+
   const handleLike = () => {
-    if (isLiked) {
-      setLikeCount(likeCount - 1);
-    } else {
-      setLikeCount(likeCount + 1);
-    }
+    setLikeCount(prev => prev + (isLiked ? -1 : 1));
     setIsLiked(!isLiked);
   };
-  
+
   const variants = {
-    enter: (direction) => ({
-      x: direction > 0 ? 300 : -300,
-      opacity: 0
-    }),
-    center: {
-      x: 0,
-      opacity: 1
-    },
-    exit: (direction) => ({
-      x: direction < 0 ? 300 : -300,
-      opacity: 0
-    })
+    enter: (direction) => ({ x: direction > 0 ? 300 : -300, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (direction) => ({ x: direction < 0 ? 300 : -300, opacity: 0 })
   };
-  
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       <Layout>
         <div className="relative z-10 text-white pb-20">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mt-8 mb-12 tracking-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-500 font-serif italic">
-              <FlyInText text="About Me" delay={0} speed={50} />
-            </span>
-          </h1>
-          
+          <motion.div
+            className="text-center mt-8 mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={titleVariants}
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-500 font-serif italic">
+                <FlyInText text="About Me" delay={0} speed={50} />
+              </span>
+            </h1>
+          </motion.div>
+
           <div className="max-w-6xl mx-auto text-lg text-gray-300 mb-16 px-4">
             <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
               <motion.div 
@@ -84,15 +85,15 @@ const About = () => {
                   </div>
                   <h2 className="text-2xl font-bold text-blue-300">My Journey</h2>
                 </div>
-                
+
                 <p className="leading-relaxed">
                   Nice to meet you! I'm an incoming Software Engineering Intern at Sixth Street and previously interned at NVIDIA through their Ignite program, where I worked on well-being initiatives and AI tooling.
                 </p>
-                
+
                 <p className="leading-relaxed">
                   My journey into tech began as a Bank of America Student Leader collaborating with the Philadelphia Youth Network to expand access to internships for local students.
                 </p>
-                
+
                 <div className="pt-4 border-t border-blue-500/20">
                   <h3 className="text-xl font-semibold text-blue-300 mb-3">Beyond Coding</h3>
                   <div className="grid grid-cols-2 gap-4">
@@ -122,7 +123,7 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="pt-4 border-t border-blue-500/20">
                   <p className="text-blue-200 italic">
                     "I found my way into tech by focusing on people first—now, I build systems that do the same."
@@ -135,9 +136,6 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                style={{
-                  boxShadow: '0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(79, 70, 229, 0.15)'
-                }}
               >
                 <div className="flex items-center justify-between p-3 border-b border-gray-700/50 bg-gradient-to-r from-gray-900 to-gray-800">
                   <div className="flex items-center gap-3">
@@ -156,7 +154,7 @@ const About = () => {
                   <div className="text-gray-300 bg-gray-800/50 px-2 py-1 rounded-full text-xs hover:bg-gray-700/50 transition-colors cursor-pointer">Follow</div>
                 </div>
 
-                <div className="relative" data-no-cursor-effect="true">
+                <div className="relative">
                   <div className="aspect-square bg-black flex items-center justify-center overflow-hidden">
                     <AnimatePresence initial={false} custom={direction}>
                       <motion.img 
@@ -182,7 +180,6 @@ const About = () => {
                           className="w-8 h-8 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 transition-colors backdrop-blur-sm border border-white/10 cursor-pointer"
                           onClick={prevImage}
                           aria-label="Previous image"
-                          data-no-cursor-effect="true"
                         >
                           <IoIosArrowBack className="text-sm" />
                         </button>
@@ -198,16 +195,14 @@ const About = () => {
                                   : "bg-gray-500/40 hover:bg-gray-400/60"
                               }`}
                               aria-label={`Go to image ${index + 1}`}
-                              data-no-cursor-effect="true"
                             />
                           ))}
                         </div>
-                        
+
                         <button 
                           className="w-8 h-8 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 transition-colors backdrop-blur-sm border border-white/10 cursor-pointer"
                           onClick={nextImage}
                           aria-label="Next image"
-                          data-no-cursor-effect="true"
                         >
                           <IoIosArrowForward className="text-sm" />
                         </button>
