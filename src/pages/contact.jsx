@@ -11,7 +11,7 @@ const Contact = () => {
         <div className="relative min-h-screen flex flex-col items-center justify-start px-4 text-white z-10 py-16">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 [text-shadow:_0_0_30px_rgb(59_130_246_/_0.3)] animate-pulse font-serif italic">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 [text-shadow:_0_0_30px_rgb(59_130_246_/_0.3)] font-serif italic">
                 <FlyInText 
                   text="Let's Connect"
                   delay={0}
@@ -31,49 +31,43 @@ const Contact = () => {
               <div className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 rounded-2xl overflow-hidden shadow-xl border border-blue-500/30">
                 <div className="p-6">
                   <h2 className="text-2xl font-bold mb-4 text-blue-300">Direct Contact</h2>
-                  
+
                   <div className="space-y-4">
-                    <div className="group">
-                      <div className="flex items-start gap-4 p-3 rounded-xl transition-all duration-300 hover:bg-blue-900/30">
-                        <div className="bg-blue-500/20 p-3 rounded-lg">
-                          <FaEnvelope className="text-blue-400 w-6 h-6" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-white group-hover:text-blue-300 transition-colors">School Email</h3>
-                          <p className="text-gray-400">bennettharper.c@northeastern.edu</p>
-                          <a 
-                            href="mailto:bennett-ha.c@northeastern.edu"
-                            className="inline-flex items-center mt-2 text-blue-400 hover:text-blue-300 transition-colors"
-                          >
-                            <span>Send email</span>
-                            <FaArrowRight className="ml-2 w-3 h-3" />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="group">
-                      <div className="flex items-start gap-4 p-3 rounded-xl transition-all duration-300 hover:bg-blue-900/30">
-                        <div className="bg-blue-500/20 p-3 rounded-lg">
-                          <FaEnvelope className="text-blue-400 w-6 h-6" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-white group-hover:text-blue-300 transition-colors">Personal Email</h3>
-                          <p className="text-gray-400">caleb76harper@gmail.com</p>
-                          <a 
-                            href="mailto:caleb.bennett.harper@gmail.com"
-                            className="inline-flex items-center mt-2 text-blue-400 hover:text-blue-300 transition-colors"
-                          >
-                            <span>Send email</span>
-                            <FaArrowRight className="ml-2 w-3 h-3" />
-                          </a>
+                    {[
+                      {
+                        label: "School Email",
+                        email: "bennettharper.c@northeastern.edu",
+                        href: "mailto:bennett-ha.c@northeastern.edu",
+                      },
+                      {
+                        label: "Personal Email",
+                        email: "caleb76harper@gmail.com",
+                        href: "mailto:caleb.bennett.harper@gmail.com",
+                      }
+                    ].map(({ label, email, href }, idx) => (
+                      <div key={idx} className="group">
+                        <div className="flex items-start gap-4 p-3 rounded-xl transition-all duration-300 hover:bg-blue-900/30">
+                          <div className="bg-blue-500/20 p-3 rounded-lg">
+                            <FaEnvelope className="text-blue-400 w-6 h-6" />
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold text-white group-hover:text-blue-300 transition-colors">{label}</h3>
+                            <p className="text-gray-400">{email}</p>
+                            <a 
+                              href={href}
+                              className="inline-flex items-center mt-2 text-blue-400 hover:text-blue-300 transition-colors"
+                            >
+                              <span>Send email</span>
+                              <FaArrowRight className="ml-2 w-3 h-3" />
+                            </a>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
-              
+
               <motion.div 
                 className="bg-gradient-to-br from-indigo-900/40 to-blue-900/40 rounded-2xl overflow-hidden shadow-xl border border-blue-500/30 p-6"
                 initial={{ opacity: 0 }}
@@ -85,7 +79,7 @@ const Contact = () => {
                 </p>
               </motion.div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -95,53 +89,50 @@ const Contact = () => {
               <div className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 rounded-2xl overflow-hidden shadow-xl border border-blue-500/30">
                 <div className="p-6">
                   <h2 className="text-2xl font-bold mb-4 text-blue-300">Social Profiles</h2>
-                  
+
                   <div className="grid grid-cols-1 gap-4">
-                    <a 
-                      href="https://www.linkedin.com/in/caleb-bennett-harper/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group"
-                    >
-                      <motion.div 
-                        className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-900/50 to-blue-800/50 hover:from-blue-800/70 hover:to-blue-700/70 transition-all duration-300 border border-blue-700/50 hover:border-blue-600"
-                        whileHover={{ y: -3 }}
+                    {[
+                      {
+                        name: "LinkedIn",
+                        url: "https://www.linkedin.com/in/caleb-bennett-harper/",
+                        icon: <FaLinkedin className="text-blue-300 w-6 h-6" />,
+                        desc: "Professional network & updates",
+                        color: "blue"
+                      },
+                      {
+                        name: "GitHub",
+                        url: "https://github.com/CalebBennett-Harper",
+                        icon: <FaGithub className="text-gray-300 w-6 h-6" />,
+                        desc: "Code repositories & projects",
+                        color: "gray"
+                      }
+                    ].map(({ name, url, icon, desc, color }, idx) => (
+                      <a 
+                        key={idx}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group"
                       >
-                        <div className="bg-blue-800/80 p-3 rounded-lg">
-                          <FaLinkedin className="text-blue-300 w-6 h-6" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">LinkedIn</h3>
-                          <p className="text-gray-400">Professional network & updates</p>
-                        </div>
-                        <FaArrowRight className="ml-auto text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </motion.div>
-                    </a>
-                    
-                    <a 
-                      href="https://github.com/CalebBennett-Harper"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group"
-                    >
-                      <motion.div 
-                        className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-gray-900/80 to-gray-800/80 hover:from-gray-800 hover:to-gray-700 transition-all duration-300 border border-gray-700/50 hover:border-gray-600"
-                        whileHover={{ y: -3 }}
-                      >
-                        <div className="bg-gray-800 p-3 rounded-lg">
-                          <FaGithub className="text-gray-300 w-6 h-6" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold text-white">GitHub</h3>
-                          <p className="text-gray-400">Code repositories & projects</p>
-                        </div>
-                        <FaArrowRight className="ml-auto text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </motion.div>
-                    </a>
+                        <motion.div 
+                          className={`flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-${color}-900/50 to-${color}-800/50 hover:from-${color}-800/70 hover:to-${color}-700/70 transition-all duration-300 border border-${color}-700/50 hover:border-${color}-600`}
+                          whileHover={{ y: -3 }}
+                        >
+                          <div className={`bg-${color}-800/80 p-3 rounded-lg`}>
+                            {icon}
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold text-white">{name}</h3>
+                            <p className="text-gray-400">{desc}</p>
+                          </div>
+                          <FaArrowRight className={`ml-auto text-${color}-400 opacity-0 group-hover:opacity-100 transition-opacity`} />
+                        </motion.div>
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
-              
+
               <motion.div 
                 className="bg-gradient-to-br from-indigo-900/40 to-blue-900/40 rounded-2xl overflow-hidden shadow-xl border border-blue-500/30 p-6"
                 initial={{ opacity: 0 }}
@@ -152,7 +143,7 @@ const Contact = () => {
                 <p className="text-gray-300 mb-6">
                   Feel free to reach out, I'm always open to discussing new projects, creative ideas!
                 </p>
-                
+
                 <motion.a
                   href="mailto:bennettharper.c@northeastern.edu"
                   className="inline-block w-full"
