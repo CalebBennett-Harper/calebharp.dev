@@ -20,7 +20,7 @@ const NotFoundPage = () => {
                 <TypewriterText 
                   text="404" 
                   delay={0} 
-                  speed={40}
+                  speed={50}
                 />
               </span>
             </h1>

@@ -49,7 +49,7 @@ const IndexPage = () => {
                   backfaceVisibility: "hidden",
                   transform: "translateZ(0)"
                 }}>
-                  <FlyInText text="Caleb Bennett-Harper" delay={300} speed={20} />
+                  <FlyInText text="Caleb Bennett-Harper" delay={0} speed={50} />
                 </span>
               </h1>
             </div>
@@ -62,8 +62,8 @@ const IndexPage = () => {
             >
               <FlyInText
                 text="Incoming SWE Intern @ Sixth Street"
-                delay={500}
-                speed={20}
+                delay={0}
+                speed={50}
               />
             </motion.div>
 
