@@ -4,27 +4,12 @@ import Layout from "../components/Layout";
 import { motion } from "framer-motion";
 import TypewriterText from "../components/TypewriterText";
 
-const titleVariants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
 const NotFoundPage = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
       <Layout>
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 py-10">
-          <motion.div
-            className="text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={titleVariants}
-          >
+          <div className="text-center">
             <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold mb-8 font-spaceGrotesk tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 [text-shadow:_0_0_30px_rgb(59_130_246_/_0.3)]">
                 <TypewriterText 
@@ -34,7 +19,7 @@ const NotFoundPage = () => {
                 />
               </span>
             </h1>
-          </motion.div>
+          </div>
 
           <motion.div
             className="p-6 bg-black/30 rounded-xl border border-blue-500/20 backdrop-blur-sm max-w-xl mx-auto mb-8"
