@@ -33,7 +33,7 @@ const IndexPage = () => {
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
               <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 animate-spin-slow" />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 opacity-30 blur-md animate-pulse-slow" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 opacity-30 blur-md" />
               <img
                 src={profileImage}
                 alt="Caleb Bennett-Harper"
@@ -43,7 +43,7 @@ const IndexPage = () => {
 
             <div className="relative w-full text-center">
               <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-600 [text-shadow:_0_0_30px_rgb(59_130_246_/_0.3)] font-serif italic">
+                <span className="text-gradient font-serif italic">
                   <FlyInText text="Caleb Bennett-Harper" delay={300} speed={20} />
                 </span>
               </h1>
@@ -68,7 +68,7 @@ const IndexPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.4 }}
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-gradient">
                 Who Am I?
               </h3>
 

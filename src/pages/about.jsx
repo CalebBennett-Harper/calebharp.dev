@@ -43,7 +43,7 @@ const About = () => {
         <div className="relative z-10 text-white pb-20">
           <div className="text-center mt-8 mb-12">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-500 font-serif italic">
+              <span className="text-gradient font-serif italic">
                 <FlyInText text="About Me" delay={0} speed={50} />
               </span>
             </h1>

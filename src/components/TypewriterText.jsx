@@ -20,14 +20,12 @@ const FlyInText = ({ text, delay = 0, speed = 50 }) => {
       opacity: 0,
       y: 20,
       x: -20,
-      rotate: -10,
-      scale: 0.8,
+      scale: 0.9,
     },
     visible: {
       opacity: 1,
       y: 0,
       x: 0,
-      rotate: 0,
       scale: 1,
       transition: {
         type: "spring",
@@ -41,13 +39,13 @@ const FlyInText = ({ text, delay = 0, speed = 50 }) => {
     <motion.span
       variants={container}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
+      animate="visible"
       className="inline-block"
       style={{
-        willChange: "opacity, transform",
+        willChange: "transform",
+        WebkitFontSmoothing: "antialiased",
         backfaceVisibility: "hidden",
-        opacity: 1,
+        transform: "translateZ(0)",
       }}
     >
       {characters.map((character, index) => (
@@ -56,7 +54,6 @@ const FlyInText = ({ text, delay = 0, speed = 50 }) => {
           variants={child}
           className="inline-block"
           style={{
-            textShadow: "0 0 8px rgba(59, 130, 246, 0.5)",
             display: character === " " ? "inline" : "inline-block",
           }}
         >
