@@ -121,7 +121,7 @@ const IndexPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 6 }}
               >
-                <h4 className="text-center text-gray-400 mb-5 font-light">Explore My Work</h4>
+                <h4 className="text-center text-gray-400 mb-5 font-light">Learn More</h4>
                 <div className="flex flex-wrap justify-center gap-5">
                   <Link to="/experiences">
                     <motion.div
