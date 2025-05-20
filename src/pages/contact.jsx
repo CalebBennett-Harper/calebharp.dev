@@ -4,16 +4,25 @@ import { motion } from "framer-motion";
 import FlyInText from "../components/TypewriterText";
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowRight } from "react-icons/fa6";
 
+const titleVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+};
+
 const Contact = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
       <Layout>
         <div className="relative min-h-screen flex flex-col items-center justify-start px-4 text-white z-10 py-16">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
             className="text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={titleVariants}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 [text-shadow:_0_0_30px_rgb(59_130_246_/_0.3)] animate-pulse font-serif italic">
