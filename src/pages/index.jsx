@@ -100,7 +100,7 @@ const IndexPage = () => {
                 >
                   <h4 className="text-xl font-semibold text-blue-400 mb-3">Core Skills</h4>
                   <ul className="space-y-2">
-                    {["Full-Stack Development", "System Architecture", "Machine Learning", "Data Analysis", "Mental Health First Aid"].map((skill, index) => (
+                    {["Full-Stack Development", "Machine Learning", "System Design", "Data Analysis", "Mental Health First Aid"].map((skill, index) => (
                       <motion.li 
                         key={skill}
                         className="flex items-center gap-2 text-gray-300"
