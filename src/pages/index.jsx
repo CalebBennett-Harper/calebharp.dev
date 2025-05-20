@@ -89,7 +89,7 @@ const IndexPage = () => {
                 >
                   <p className="text-gray-300">
                   Current undergraduate and rising third year at Northeastern University studying Computer Science & Economics. 
-                  I'm passionate about building systems that are both technically rigorous and people-focused. 
+                  My passion lies in creating systems that are as thoughtful in design as they are in engineering. 
                   </p>
                 </motion.div>
                 
