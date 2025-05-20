@@ -15,14 +15,6 @@ const containerVariants = {
   },
 };
 
-const titleVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
-};
-
 const IndexPage = () => {
   return (
     <Layout>
@@ -49,26 +41,13 @@ const IndexPage = () => {
               />
             </motion.div>
 
-            <motion.div
-              className="relative w-full text-center"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={titleVariants}
-            >
+            <div className="relative w-full text-center">
               <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-600 [text-shadow:_0_0_30px_rgb(59_130_246_/_0.3)] animate-pulse font-serif italic">
                   <FlyInText text="Caleb Bennett-Harper" delay={300} speed={20} />
                 </span>
               </h1>
-            </motion.div>
-
-            <h2 className="text-xl sm:text-2xl md:text-3xl mt-2 text-center text-gray-300 flex items-center justify-center gap-3 font-spaceGrotesk">
-              <motion.div
-                animate={{ opacity: [0, 1] }}
-                transition={{ duration: 0.3, delay: 1.0 }}
-              />
-            </h2>
+            </div>
 
             <motion.div
               className="text-base sm:text-lg md:text-xl mt-6 text-center text-gray-300 max-w-2xl relative"
@@ -89,15 +68,9 @@ const IndexPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.4 }}
             >
-              <motion.h3
-                className="text-2xl md:text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-                variants={titleVariants}
-              >
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
                 Who Am I?
-              </motion.h3>
+              </h3>
 
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <motion.div
@@ -119,13 +92,19 @@ const IndexPage = () => {
                 >
                   <h4 className="text-xl font-semibold text-blue-400 mb-3">Core Skills</h4>
                   <ul className="space-y-2">
-                    {["Full-Stack Development", "Machine Learning", "System Design", "Data Analysis", "Mental Health First Aid"].map((skill, index) => (
+                    {[
+                      "Full-Stack Development",
+                      "Machine Learning",
+                      "System Design",
+                      "Data Analysis",
+                      "Mental Health First Aid"
+                    ].map((skill, index) => (
                       <motion.li
                         key={skill}
                         className="flex items-center gap-2 text-gray-300"
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.8 + (index * 0.1) }}
+                        transition={{ delay: 1.8 + index * 0.1 }}
                       >
                         <span className="text-blue-500">→</span> {skill}
                       </motion.li>
