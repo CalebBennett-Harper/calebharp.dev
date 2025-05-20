@@ -3,18 +3,18 @@ import { motion } from "framer-motion";
 
 const FlyInText = ({ text, delay = 0, speed = 50 }) => {
   const characters = Array.from(text);
-  
+
   const container = {
     hidden: { opacity: 0 },
-    visible: (i = 1) => ({
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: speed / 1000,
         delayChildren: delay / 1000,
       },
-    }),
+    },
   };
-  
+
   const child = {
     hidden: {
       opacity: 0,
@@ -36,12 +36,13 @@ const FlyInText = ({ text, delay = 0, speed = 50 }) => {
       },
     },
   };
-  
+
   return (
     <motion.span
       variants={container}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
       className="inline-block"
     >
       {characters.map((character, index) => (
@@ -49,9 +50,9 @@ const FlyInText = ({ text, delay = 0, speed = 50 }) => {
           key={index}
           variants={child}
           className="inline-block"
-          style={{ 
+          style={{
             textShadow: "0 0 8px rgba(59, 130, 246, 0.5)",
-            display: character === " " ? "inline" : "inline-block"
+            display: character === " " ? "inline" : "inline-block",
           }}
         >
           {character === " " ? "\u00A0" : character}
