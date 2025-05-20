@@ -11,7 +11,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.3 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -30,10 +30,10 @@ const IndexPage = () => {
               className="relative mb-6 w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 animate-spin-slow" />              
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 opacity-30 blur-md animate-pulse-slow" />              
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 animate-spin-slow" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 opacity-30 blur-md animate-pulse-slow" />
               <img
                 src={profileImage}
                 alt="Caleb Bennett-Harper"
@@ -44,7 +44,7 @@ const IndexPage = () => {
             <div className="relative w-full text-center">
               <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-600 [text-shadow:_0_0_30px_rgb(59_130_246_/_0.3)] animate-pulse font-serif italic">
-                  <FlyInText text="Caleb Bennett-Harper" delay={0} speed={50} />
+                  <FlyInText text="Caleb Bennett-Harper" delay={300} speed={20} />
                 </span>
               </h1>
             </div>
@@ -52,48 +52,48 @@ const IndexPage = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl mt-2 text-center text-gray-300 flex items-center justify-center gap-3 font-spaceGrotesk">
               <motion.div
                 animate={{ opacity: [0, 1] }}
-                transition={{ duration: 0.5, delay: 1.5 }}
+                transition={{ duration: 0.3, delay: 1.0 }}
               >
               </motion.div>
             </h2>
 
-            <motion.div 
+            <motion.div
               className="text-base sm:text-lg md:text-xl mt-6 text-center text-gray-300 max-w-2xl relative"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 2 }}
+              transition={{ duration: 0.4, delay: 1.2 }}
             >
               <FlyInText
                 text="Incoming SWE Intern @ Sixth Street"
-                delay={1500}
-                speed={40}
+                delay={500}
+                speed={20}
               />
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="mt-12 w-full max-w-5xl bg-gradient-to-r from-blue-900/30 to-indigo-900/30 p-6 rounded-xl border border-blue-500/20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 5 }}
+              transition={{ duration: 0.4, delay: 1.4 }}
             >
               <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
                 Who Am I?
               </h3>
-              
+
               <div className="flex flex-col md:flex-row gap-8 items-center">
-                <motion.div 
+                <motion.div
                   className="flex-1 space-y-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 5.3 }}
+                  transition={{ delay: 1.6 }}
                 >
                   <p className="text-gray-300">
-                  Current undergraduate and rising third year at Northeastern University studying Computer Science & Economics. 
-                  My passion lies in creating systems that are as thoughtful in design as they are in engineering. 
+                    Current undergraduate and rising third year at Northeastern University studying Computer Science & Economics.
+                    My passion lies in creating systems that are as thoughtful in design as they are in engineering.
                   </p>
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   className="flex-1 bg-black/40 p-5 rounded-lg border border-blue-500/30"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
@@ -101,12 +101,12 @@ const IndexPage = () => {
                   <h4 className="text-xl font-semibold text-blue-400 mb-3">Core Skills</h4>
                   <ul className="space-y-2">
                     {["Full-Stack Development", "Machine Learning", "System Design", "Data Analysis", "Mental Health First Aid"].map((skill, index) => (
-                      <motion.li 
+                      <motion.li
                         key={skill}
                         className="flex items-center gap-2 text-gray-300"
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 5.5 + (index * 0.1) }}
+                        transition={{ delay: 1.8 + (index * 0.1) }}
                       >
                         <span className="text-blue-500">→</span> {skill}
                       </motion.li>
@@ -114,12 +114,12 @@ const IndexPage = () => {
                   </ul>
                 </motion.div>
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 className="mt-10 pt-6 border-t border-blue-500/20"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 6 }}
+                transition={{ delay: 2.5 }}
               >
                 <h4 className="text-center text-gray-400 mb-5 font-light">Learn More</h4>
                 <div className="flex flex-wrap justify-center gap-5">
@@ -136,7 +136,7 @@ const IndexPage = () => {
                       </div>
                     </motion.div>
                   </Link>
-                  
+
                   <Link
                     to="/about"
                     className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg shadow-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center"
@@ -147,12 +147,12 @@ const IndexPage = () => {
                 </div>
               </motion.div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="mt-12 flex justify-center gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 6.5 }}
+              transition={{ delay: 2.9 }}
             >
               <a
                 href="https://github.com/CalebBennett-Harper"
@@ -167,7 +167,7 @@ const IndexPage = () => {
                   <FaGithub className="w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" />
                 </motion.div>
               </a>
-              
+
               <a
                 href="https://www.linkedin.com/in/caleb-bennett-harper/"
                 target="_blank"
