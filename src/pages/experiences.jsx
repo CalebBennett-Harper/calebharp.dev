@@ -180,7 +180,7 @@ const Experiences = () => {
       duration: "Apr 2025 - Present",
       location: "New York City Metropolitan Area",
       onsite: "On-site",
-      program: "summer 2025",
+      program: "Summer 2025",
       additionalPositions: [
         {
           position: "Early Insights Program",
