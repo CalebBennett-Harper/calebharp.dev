@@ -11,7 +11,12 @@ const NotFoundPage = () => {
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 py-10">
           <div className="text-center">
             <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold mb-8 font-spaceGrotesk tracking-tight">
-              <span className="text-gradient">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600" style={{
+                willChange: "transform",
+                WebkitFontSmoothing: "antialiased",
+                backfaceVisibility: "hidden",
+                transform: "translateZ(0)"
+              }}>
                 <TypewriterText 
                   text="404" 
                   delay={0} 

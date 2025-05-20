@@ -43,7 +43,12 @@ const IndexPage = () => {
 
             <div className="relative w-full text-center">
               <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
-                <span className="text-gradient font-serif italic">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-600 font-serif italic" style={{
+                  willChange: "transform",
+                  WebkitFontSmoothing: "antialiased",
+                  backfaceVisibility: "hidden",
+                  transform: "translateZ(0)"
+                }}>
                   <FlyInText text="Caleb Bennett-Harper" delay={300} speed={20} />
                 </span>
               </h1>
@@ -68,7 +73,12 @@ const IndexPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.4 }}
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-gradient">
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400" style={{
+                willChange: "transform",
+                WebkitFontSmoothing: "antialiased",
+                backfaceVisibility: "hidden",
+                transform: "translateZ(0)"
+              }}>
                 Who Am I?
               </h3>
 

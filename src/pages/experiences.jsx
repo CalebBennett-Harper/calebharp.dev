@@ -230,7 +230,12 @@ const Experiences = () => {
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 py-16">
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4 tracking-tight">
-              <span className="text-gradient font-serif italic">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 font-serif italic" style={{
+                willChange: "transform",
+                WebkitFontSmoothing: "antialiased",
+                backfaceVisibility: "hidden",
+                transform: "translateZ(0)"
+              }}>
                 <FlyInText text="Professional Experiences" delay={0} speed={50} />
               </span>
             </h1>

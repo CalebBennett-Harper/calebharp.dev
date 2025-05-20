@@ -41,12 +41,6 @@ const FlyInText = ({ text, delay = 0, speed = 50 }) => {
       initial="hidden"
       animate="visible"
       className="inline-block"
-      style={{
-        willChange: "transform",
-        WebkitFontSmoothing: "antialiased",
-        backfaceVisibility: "hidden",
-        transform: "translateZ(0)",
-      }}
     >
       {characters.map((character, index) => (
         <motion.span

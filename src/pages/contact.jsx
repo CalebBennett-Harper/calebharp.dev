@@ -11,7 +11,12 @@ const Contact = () => {
         <div className="relative min-h-screen flex flex-col items-center justify-start px-4 text-white z-10 py-16">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 tracking-tight">
-              <span className="text-gradient font-serif italic">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 font-serif italic" style={{
+                willChange: "transform",
+                WebkitFontSmoothing: "antialiased",
+                backfaceVisibility: "hidden",
+                transform: "translateZ(0)"
+              }}>
                 <FlyInText 
                   text="Let's Connect"
                   delay={0}
