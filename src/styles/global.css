@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,13 +28,13 @@ body {
 }
 
 ::selection {
-  background: #6d28d9;
+  background: #4a5568;
   color: #ffffff;
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 20px rgba(109, 40, 217, 0.2);
+  box-shadow: 0 12px 20px rgba(74, 85, 104, 0.2);
 }
 
 @keyframes bounce {
@@ -55,14 +55,14 @@ button:hover {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(to right, #3b82f6, #6366f1, #3b82f6);
+  background-image: linear-gradient(to right, #ffffff, #e2e8f0, #ffffff);
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   letter-spacing: -0.025em;
 }
 

@@ -10,8 +10,8 @@ const Contact = () => {
       <Layout>
         <div className="relative min-h-screen flex flex-col items-center justify-start px-4 text-white z-10 py-16">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 font-serif italic" style={{
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8 tracking-tight font-jetbrains">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-white" style={{
                 willChange: "transform",
                 WebkitFontSmoothing: "antialiased",
                 backfaceVisibility: "hidden",
@@ -33,9 +33,9 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="space-y-6"
             >
-              <div className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 rounded-2xl overflow-hidden shadow-xl border border-blue-500/30">
+              <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 rounded-2xl overflow-hidden shadow-xl border border-gray-500/30">
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold mb-4 text-blue-300">Direct Contact</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-white font-jetbrains">Direct Contact</h2>
 
                   <div className="space-y-4">
                     {[
@@ -51,16 +51,16 @@ const Contact = () => {
                       }
                     ].map(({ label, email, href }, idx) => (
                       <div key={idx} className="group">
-                        <div className="flex items-start gap-4 p-3 rounded-xl transition-all duration-300 hover:bg-blue-900/30">
-                          <div className="bg-blue-500/20 p-3 rounded-lg">
-                            <FaEnvelope className="text-blue-400 w-6 h-6" />
+                        <div className="flex items-start gap-4 p-3 rounded-xl transition-all duration-300 hover:bg-gray-900/30">
+                          <div className="bg-gray-500/20 p-3 rounded-lg">
+                            <FaEnvelope className="text-gray-400 w-6 h-6" />
                           </div>
                           <div>
-                            <h3 className="text-lg font-semibold text-white group-hover:text-blue-300 transition-colors">{label}</h3>
+                            <h3 className="text-lg font-semibold text-white group-hover:text-gray-300 transition-colors">{label}</h3>
                             <p className="text-gray-400">{email}</p>
                             <a 
                               href={href}
-                              className="inline-flex items-center mt-2 text-blue-400 hover:text-blue-300 transition-colors"
+                              className="inline-flex items-center mt-2 text-gray-400 hover:text-white transition-colors"
                             >
                               <span>Send email</span>
                               <FaArrowRight className="ml-2 w-3 h-3" />
@@ -74,7 +74,7 @@ const Contact = () => {
               </div>
 
               <motion.div 
-                className="bg-gradient-to-br from-indigo-900/40 to-blue-900/40 rounded-2xl overflow-hidden shadow-xl border border-blue-500/30 p-6"
+                className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 rounded-2xl overflow-hidden shadow-xl border border-gray-500/30 p-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
@@ -91,18 +91,18 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="space-y-6"
             >
-              <div className="bg-gradient-to-br from-blue-900/40 to-indigo-900/40 rounded-2xl overflow-hidden shadow-xl border border-blue-500/30">
+              <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 rounded-2xl overflow-hidden shadow-xl border border-gray-500/30">
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold mb-4 text-blue-300">Social Profiles</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-white font-jetbrains">Social Profiles</h2>
 
                   <div className="grid grid-cols-1 gap-4">
                     {[
                       {
                         name: "LinkedIn",
                         url: "https://www.linkedin.com/in/caleb-bennett-harper/",
-                        icon: <FaLinkedin className="text-blue-300 w-6 h-6" />,
+                        icon: <FaLinkedin className="text-gray-300 w-6 h-6" />,
                         desc: "Professional network & updates",
-                        color: "blue"
+                        color: "gray"
                       },
                       {
                         name: "GitHub",
@@ -139,12 +139,12 @@ const Contact = () => {
               </div>
 
               <motion.div 
-                className="bg-gradient-to-br from-indigo-900/40 to-blue-900/40 rounded-2xl overflow-hidden shadow-xl border border-blue-500/30 p-6"
+                className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 rounded-2xl overflow-hidden shadow-xl border border-gray-500/30 p-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
               >
-                <h2 className="text-2xl font-bold mb-4 text-blue-300">Let's Work Together</h2>
+                <h2 className="text-2xl font-bold mb-4 text-white font-jetbrains">Let's Work Together</h2>
                 <p className="text-gray-300 mb-6">
                   Feel free to reach out, I'm always open to discussing new projects, creative ideas!
                 </p>
@@ -155,7 +155,7 @@ const Contact = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <div className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-900/30 transition-all duration-300">
+                  <div className="bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 text-black font-medium py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-gray-900/30 transition-all duration-300">
                     <FaEnvelope className="w-5 h-5" />
                     <span>Start a Conversation</span>
                   </div>

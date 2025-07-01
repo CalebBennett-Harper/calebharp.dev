@@ -58,7 +58,7 @@ const Navbar = () => {
       ref={navRef} 
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-black/90 backdrop-blur-md shadow-lg shadow-blue-900/10" 
+          ? "bg-black/90 backdrop-blur-md shadow-lg shadow-gray-900/10" 
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -74,10 +74,10 @@ const Navbar = () => {
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center">
-                  <FaLaptopCode className="text-white text-lg" />
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-white to-gray-300 flex items-center justify-center">
+                  <FaLaptopCode className="text-black text-lg" />
                 </div>
-                <span className="text-xl text-white">calebharp.dev</span>
+                <span className="text-xl text-white font-jetbrains">calebharp.dev</span>
               </motion.div>
             </Link>
           </div>

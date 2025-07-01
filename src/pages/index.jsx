@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/button";
 import FlyInText from "../components/TypewriterText";
 import { Link } from "gatsby";
 import { motion } from "framer-motion";
-import profileImage from "../images/professional/calebProfile.jpeg";
+import profileImage from "../images/professional/caleb bw.png";
 import { FaGithub, FaLinkedin, FaArrowRight } from "react-icons/fa";
 
 const containerVariants = {
@@ -32,18 +32,18 @@ const IndexPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 animate-spin-slow" />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 opacity-30 blur-md" />
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-white via-gray-300 to-gray-500 animate-spin-slow" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white via-gray-300 to-gray-500 opacity-30 blur-md" />
               <img
                 src={profileImage}
                 alt="Caleb Bennett-Harper"
-                className="relative w-full h-full rounded-full shadow-xl p-[3px]"
+                className="relative w-full h-full rounded-full shadow-xl p-[3px] object-cover"
               />
             </motion.div>
 
             <div className="relative w-full text-center">
-              <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-600 font-serif italic" style={{
+              <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight font-jetbrains">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-white" style={{
                   willChange: "transform",
                   WebkitFontSmoothing: "antialiased",
                   backfaceVisibility: "hidden",
@@ -55,25 +55,25 @@ const IndexPage = () => {
             </div>
 
             <motion.div
-              className="text-base sm:text-lg md:text-xl mt-6 text-center text-gray-300 max-w-2xl relative"
+              className="text-base sm:text-lg md:text-xl mt-6 text-center text-gray-300 max-w-2xl mx-auto relative"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 1.2 }}
             >
               <FlyInText
-                text="Incoming SWE Intern @ Sixth Street"
+                text="SWE Intern @ Sixth Street"
                 delay={0}
                 speed={50}
               />
             </motion.div>
 
             <motion.div
-              className="mt-12 w-full max-w-5xl bg-gradient-to-r from-blue-900/30 to-indigo-900/30 p-6 rounded-xl border border-blue-500/20"
+              className="mt-12 w-full max-w-5xl bg-gradient-to-r from-gray-900/30 to-gray-800/30 p-6 rounded-xl border border-gray-500/20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.4 }}
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400" style={{
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 font-jetbrains" style={{
                 willChange: "transform",
                 WebkitFontSmoothing: "antialiased",
                 backfaceVisibility: "hidden",
@@ -96,11 +96,11 @@ const IndexPage = () => {
                 </motion.div>
 
                 <motion.div
-                  className="flex-1 bg-black/40 p-5 rounded-lg border border-blue-500/30"
+                  className="flex-1 bg-black/40 p-5 rounded-lg border border-gray-500/30"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <h4 className="text-xl font-semibold text-blue-400 mb-3">Core Skills</h4>
+                  <h4 className="text-xl font-semibold text-white mb-3 font-jetbrains">Core Skills</h4>
                   <ul className="space-y-2">
                     {[
                       "Full-Stack Development",
@@ -116,7 +116,7 @@ const IndexPage = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1.8 + index * 0.1 }}
                       >
-                        <span className="text-blue-500">→</span> {skill}
+                        <span className="text-gray-500">→</span> {skill}
                       </motion.li>
                     ))}
                   </ul>
@@ -124,7 +124,7 @@ const IndexPage = () => {
               </div>
 
               <motion.div
-                className="mt-10 pt-6 border-t border-blue-500/20"
+                className="mt-10 pt-6 border-t border-gray-500/20"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.5 }}
@@ -133,13 +133,13 @@ const IndexPage = () => {
                 <div className="flex flex-wrap justify-center gap-5">
                   <Link to="/experiences">
                     <motion.div
-                      className="group relative overflow-hidden bg-gradient-to-br from-blue-600/20 to-indigo-600/20 rounded-lg px-6 py-3 shadow-lg"
+                      className="group relative overflow-hidden bg-gradient-to-br from-gray-600/20 to-gray-700/20 rounded-lg px-6 py-3 shadow-lg"
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-gray-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                       <div className="relative flex items-center gap-3">
-                        <span className="text-xl text-blue-400">🚀</span>
+                        <span className="text-xl text-gray-400">🚀</span>
                         <span className="text-white font-medium">Experiences</span>
                       </div>
                     </motion.div>
@@ -147,7 +147,7 @@ const IndexPage = () => {
 
                   <Link
                     to="/about"
-                    className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg shadow-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center"
+                    className="px-6 py-3 bg-gradient-to-r from-white to-gray-300 text-black font-medium rounded-lg shadow-lg hover:from-gray-200 hover:to-gray-400 transition-all duration-300 flex items-center justify-center"
                   >
                     About Me
                     <FaArrowRight className="ml-2" />
@@ -169,10 +169,10 @@ const IndexPage = () => {
                 className="group"
               >
                 <motion.div
-                  className="bg-black/30 p-3 rounded-full border border-blue-500/30 hover:border-blue-500 transition-all duration-300"
+                  className="bg-black/30 p-3 rounded-full border border-gray-500/30 hover:border-gray-400 transition-all duration-300"
                   whileHover={{ y: -3 }}
                 >
-                  <FaGithub className="w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" />
+                  <FaGithub className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors duration-300" />
                 </motion.div>
               </a>
 
@@ -183,10 +183,10 @@ const IndexPage = () => {
                 className="group"
               >
                 <motion.div
-                  className="bg-black/30 p-3 rounded-full border border-blue-500/30 hover:border-blue-500 transition-all duration-300"
+                  className="bg-black/30 p-3 rounded-full border border-gray-500/30 hover:border-gray-400 transition-all duration-300"
                   whileHover={{ y: -3 }}
                 >
-                  <FaLinkedin className="w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors duration-300" />
+                  <FaLinkedin className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors duration-300" />
                 </motion.div>
               </a>
             </motion.div>

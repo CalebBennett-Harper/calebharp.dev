@@ -16,7 +16,7 @@ const BadgeCards = ({ cards }) => {
             ) : (
               <div></div>
             )}
-            <p className="font-mono text-12 text-white py-2 px-1">
+            <p className="font-jetbrains text-12 text-white py-2 px-1">
               {card.name}
             </p>
           </Button>

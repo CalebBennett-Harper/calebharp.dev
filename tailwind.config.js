@@ -15,6 +15,7 @@ module.exports = {
       },
       fontFamily: {
         'spaceGrotesk': ['Space Grotesk', 'sans-serif'],
+        'jetbrains': ['JetBrains Mono', 'monospace'],
       },
     },
   },

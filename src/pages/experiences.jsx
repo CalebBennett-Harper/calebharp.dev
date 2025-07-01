@@ -8,6 +8,7 @@ import sixthStreetLogo from "../images/companyLogos/6thst.png";
 import boaLogo from "../images/companyLogos/boa.jpeg";
 import googleLogo from "../images/companyLogos/google.jpeg";
 import jsLogo from "../images/companyLogos/js.jpeg";
+import locusLogo from "../images/companyLogos/Locus Logo.jpeg";
 import morganStanleyLogo from "../images/companyLogos/morganstanley.jpeg";
 import nvidiaLogo from "../images/companyLogos/nvidia.jpeg";
 import phillyLogo from "../images/companyLogos/philly.jpeg";
@@ -17,6 +18,7 @@ const ExperienceCard = ({ company, position, type, duration, location, skills, o
 
   const getLogo = () => {
     switch(company) {
+      case "Locus": return locusLogo;
       case "Sixth Street": return sixthStreetLogo;
       case "Morgan Stanley": return morganStanleyLogo;
       case "NVIDIA": return nvidiaLogo;
@@ -33,18 +35,18 @@ const ExperienceCard = ({ company, position, type, duration, location, skills, o
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-gradient-to-br from-gray-900 to-black border border-blue-600 rounded-xl shadow-lg overflow-hidden mb-8 w-full max-w-5xl mx-auto hover:shadow-blue-500/30 hover:border-blue-400 transition-all duration-300 cursor-pointer"
+      className="bg-gradient-to-br from-gray-900 to-black border border-gray-600 rounded-xl shadow-lg overflow-hidden mb-8 w-full max-w-5xl mx-auto hover:shadow-gray-500/30 hover:border-gray-400 transition-all duration-300 cursor-pointer"
       onClick={() => setExpanded(!expanded)}
     >
       <div className="p-6 relative">
-        <div className="absolute top-0 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-600 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-1/3 h-1 bg-gradient-to-r from-white to-transparent"></div>
 
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-          <div className="w-16 h-16 flex-shrink-0 bg-black border border-blue-500 rounded-lg flex items-center justify-center p-2 overflow-hidden">
+          <div className="w-16 h-16 flex-shrink-0 bg-black border border-gray-500 rounded-lg flex items-center justify-center p-2 overflow-hidden">
             {getLogo() ? (
               <img src={getLogo()} alt={`${company} logo`} className="w-full h-full object-contain" />
             ) : (
-              <div className="text-xl font-bold text-center text-blue-400">
+              <div className="text-xl font-bold text-center text-gray-400">
                 {company.substring(0, 2)}
               </div>
             )}
@@ -52,27 +54,27 @@ const ExperienceCard = ({ company, position, type, duration, location, skills, o
           <div className="flex-grow">
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="text-xl font-bold text-blue-400">{position}</h3>
-                <h4 className="text-lg font-semibold text-gray-300">{company}</h4>
+                <h3 className="text-xl font-bold text-white font-jetbrains">{position}</h3>
+                <h4 className="text-lg font-semibold text-gray-300 font-jetbrains">{company}</h4>
               </div>
-              <div className="text-blue-400">
+              <div className="text-gray-400">
                 {additionalPositions ? (expanded ? <FaChevronUp /> : <FaChevronDown />) : null}
               </div>
             </div>
 
             <div className="flex flex-wrap gap-2 mt-2">
               {type && (
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-900 text-blue-200 border border-blue-700">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-900 text-gray-200 border border-gray-700">
                   <FaBriefcase className="mr-1" />{type}
                 </span>
               )}
               {onsite && (
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-900 text-blue-200 border border-blue-700">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-900 text-gray-200 border border-gray-700">
                   {onsite}
                 </span>
               )}
               {program && (
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-900 text-blue-200 border border-blue-700">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-900 text-gray-200 border border-gray-700">
                   {program}
                 </span>
               )}
@@ -82,20 +84,20 @@ const ExperienceCard = ({ company, position, type, duration, location, skills, o
 
         <div className="mt-4 space-y-2 text-gray-400">
           <div className="flex items-center">
-            <FaCalendarAlt className="mr-2 text-blue-500" />
+            <FaCalendarAlt className="mr-2 text-gray-500" />
             <span>{duration}</span>
           </div>
           {location && (
             <div className="flex items-center">
-              <FaMapMarkerAlt className="mr-2 text-blue-500" />
+              <FaMapMarkerAlt className="mr-2 text-gray-500" />
               <span>{location}</span>
             </div>
           )}
           {skills && (
             <div className="flex items-start">
-              <FaTools className="mr-2 mt-1 text-blue-500" />
+              <FaTools className="mr-2 mt-1 text-gray-500" />
               <div>
-                <span className="font-medium text-blue-300">Skills: </span>
+                <span className="font-medium text-gray-300">Skills: </span>
                 <span>{skills}</span>
               </div>
             </div>
@@ -106,34 +108,34 @@ const ExperienceCard = ({ company, position, type, duration, location, skills, o
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
-            className="mt-6 pt-4 border-t border-blue-800"
+            className="mt-6 pt-4 border-t border-gray-800"
           >
             {additionalPositions.map((pos, idx) => (
               <div key={idx} className="mb-6 last:mb-0">
-                <h3 className="text-lg font-bold text-blue-400">{pos.position}</h3>
+                <h3 className="text-lg font-bold text-white font-jetbrains">{pos.position}</h3>
                 <div className="flex flex-wrap gap-2 mt-1 mb-2">
                   {pos.program && (
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-900 text-blue-200 border border-blue-700">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-900 text-gray-200 border border-gray-700">
                       {pos.program}
                     </span>
                   )}
                 </div>
                 <div className="space-y-2 text-gray-400">
                   <div className="flex items-center">
-                    <FaCalendarAlt className="mr-2 text-blue-500" />
+                    <FaCalendarAlt className="mr-2 text-gray-500" />
                     <span>{pos.duration}</span>
                   </div>
                   {pos.location && (
                     <div className="flex items-center">
-                      <FaMapMarkerAlt className="mr-2 text-blue-500" />
+                      <FaMapMarkerAlt className="mr-2 text-gray-500" />
                       <span>{pos.location}</span>
                     </div>
                   )}
                   {pos.skills && (
                     <div className="flex items-start">
-                      <FaTools className="mr-2 mt-1 text-blue-500" />
+                      <FaTools className="mr-2 mt-1 text-gray-500" />
                       <div>
-                        <span className="font-medium text-blue-300">Skills: </span>
+                        <span className="font-medium text-gray-300">Skills: </span>
                         <span>{pos.skills}</span>
                       </div>
                     </div>
@@ -143,7 +145,7 @@ const ExperienceCard = ({ company, position, type, duration, location, skills, o
             ))}
           </motion.div>
         )}
-        <div className="absolute bottom-0 right-0 w-1/3 h-1 bg-gradient-to-l from-blue-600 to-transparent"></div>
+        <div className="absolute bottom-0 right-0 w-1/3 h-1 bg-gradient-to-l from-white to-transparent"></div>
       </div>
     </motion.div>
   );
@@ -151,13 +153,21 @@ const ExperienceCard = ({ company, position, type, duration, location, skills, o
 
 const experiences = [
   {
+    company: "Locus",
+    position: "Founder & CEO",
+    type: "Full-time",
+    duration: "Jun 2025 - Present · 2 mos",
+    location: "New York City Metropolitan Area"
+  },
+  {
     company: "Sixth Street",
-    position: "Incoming Software Engineer Intern",
+    position: "Software Engineer Intern",
     type: "Internship",
     duration: "Apr 2025 - Present",
     location: "New York City Metropolitan Area",
     onsite: "On-site",
     program: "Summer 2025",
+    skills: "Python · SQL · GraphQL · Pandas · Data Analysis",
     additionalPositions: [
       {
         position: "Early Insights Program",
@@ -229,8 +239,8 @@ const Experiences = () => {
       <Layout>
         <div className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-4 py-16">
           <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 font-serif italic" style={{
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4 tracking-tight font-jetbrains">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-white" style={{
                 willChange: "transform",
                 WebkitFontSmoothing: "antialiased",
                 backfaceVisibility: "hidden",

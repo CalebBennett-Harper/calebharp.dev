@@ -8,12 +8,12 @@ const ProjectCard = ({ project }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-black/60 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-blue-900/40 hover:border-blue-700/40 transition-all duration-300 h-full flex flex-col"
+      className="bg-black/60 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-gray-900/40 hover:border-gray-700/40 transition-all duration-300 h-full flex flex-col"
     >
-      <div className="h-2 bg-gradient-to-r from-blue-700 via-blue-500 to-indigo-600"></div>
+      <div className="h-2 bg-gradient-to-r from-white via-gray-300 to-gray-500"></div>
       <div className="p-6 flex flex-col h-full">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl font-bold text-blue-100">
+          <h3 className="text-xl font-bold text-white font-jetbrains">
             {project.name}
           </h3>
           
@@ -25,7 +25,7 @@ const ProjectCard = ({ project }) => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-2 bg-blue-900/30 rounded-full text-blue-400 hover:text-blue-300 hover:bg-blue-800/40 transition-colors"
+                className="p-2 bg-gray-900/30 rounded-full text-gray-400 hover:text-white hover:bg-gray-800/40 transition-colors"
               >
                 <FaGithub className="w-4 h-4" />
               </motion.a>
@@ -38,7 +38,7 @@ const ProjectCard = ({ project }) => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-2 bg-blue-900/30 rounded-full text-blue-400 hover:text-blue-300 hover:bg-blue-800/40 transition-colors"
+                className="p-2 bg-gray-900/30 rounded-full text-gray-400 hover:text-white hover:bg-gray-800/40 transition-colors"
               >
                 <FaExternalLinkAlt className="w-4 h-4" />
               </motion.a>
@@ -46,7 +46,7 @@ const ProjectCard = ({ project }) => {
           </div>
         </div>
         
-        <p className="text-blue-200/80 mb-6 flex-grow">
+        <p className="text-gray-200/80 mb-6 flex-grow">
           {project.description}
         </p>
         
@@ -55,9 +55,9 @@ const ProjectCard = ({ project }) => {
             {project.badges.map((badge) => (
               <span 
                 key={badge}
-                className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-blue-900/20 text-blue-300 border border-blue-800/50"
+                className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-900/20 text-gray-300 border border-gray-800/50"
               >
-                <FaCode className="mr-1 w-3 h-3 text-blue-400" />
+                <FaCode className="mr-1 w-3 h-3 text-gray-400" />
                 {badge}
               </span>
             ))}
@@ -67,7 +67,7 @@ const ProjectCard = ({ project }) => {
                 href={project.hackathon.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-blue-700/30 text-blue-200 hover:bg-blue-700/40 transition-colors border border-blue-600/40"
+                className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-700/30 text-gray-200 hover:bg-gray-700/40 transition-colors border border-gray-600/40"
               >
                 {project.hackathon.name}
               </a>

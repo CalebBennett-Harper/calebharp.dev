@@ -3,8 +3,8 @@ import Layout from "../components/Layout";
 import FlyInText from "../components/TypewriterText";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  FaHeart, FaRegBookmark, FaCode,
-  FaChessKnight, FaSkating, FaPaintBrush, FaLaptopCode
+  FaHeart, FaRegBookmark, FaBook,
+  FaChessKnight, FaPlane, FaPaintBrush, FaLaptopCode
 } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { SiNvidia, SiGoogle } from "react-icons/si";
@@ -42,8 +42,8 @@ const About = () => {
       <Layout>
         <div className="relative z-10 text-white pb-20">
           <div className="text-center mt-8 mb-12">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-500 font-serif italic" style={{
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-jetbrains">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-300 to-white" style={{
                 willChange: "transform",
                 WebkitFontSmoothing: "antialiased",
                 backfaceVisibility: "hidden",
@@ -57,33 +57,33 @@ const About = () => {
           <div className="max-w-6xl mx-auto text-lg text-gray-300 mb-16 px-4">
             <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
               <motion.div 
-                className="lg:w-1/2 space-y-6 bg-gradient-to-br from-blue-900/20 to-indigo-900/20 p-6 rounded-xl border border-blue-500/20"
+                className="lg:w-1/2 space-y-6 bg-gradient-to-br from-gray-900/20 to-gray-800/20 p-6 rounded-xl border border-gray-500/20"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center">
-                    <FaLaptopCode className="text-white" />
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-white to-gray-300 flex items-center justify-center">
+                    <FaLaptopCode className="text-black" />
                   </div>
-                  <h2 className="text-2xl font-bold text-blue-300">My Journey</h2>
+                  <h2 className="text-2xl font-bold text-white font-jetbrains">My Journey</h2>
                 </div>
 
                 <p className="leading-relaxed">
-                  Nice to meet you! I'm an incoming Software Engineering Intern at Sixth Street and previously interned at NVIDIA through their Ignite program, where I worked on well-being initiatives and AI tooling.
+                  Nice to meet you! I'm a Software Engineering Intern at Sixth Street and previously interned at NVIDIA through their Ignite program, where I worked on well-being initiatives and AI tooling.
                 </p>
 
                 <p className="leading-relaxed">
                   My journey into tech began as a Bank of America Student Leader collaborating with the Philadelphia Youth Network to expand access to internships for local students.
                 </p>
 
-                <div className="pt-4 border-t border-blue-500/20">
-                  <h3 className="text-xl font-semibold text-blue-300 mb-3">Beyond Coding</h3>
+                <div className="pt-4 border-t border-gray-500/20">
+                  <h3 className="text-xl font-semibold text-white mb-3 font-jetbrains">Beyond Coding</h3>
                   <div className="grid grid-cols-2 gap-4">
-                    {[["TouchDesigner", FaCode], ["Chess & Poker", FaChessKnight], ["Skateboarding", FaSkating], ["Art Museums", FaPaintBrush]].map(([label, Icon], idx) => (
+                    {[["Reading", FaBook], ["Chess & Poker", FaChessKnight], ["Traveling", FaPlane], ["Art", FaPaintBrush]].map(([label, Icon], idx) => (
                       <div key={idx} className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-blue-800/50 flex items-center justify-center">
-                          <Icon className="text-blue-300" />
+                        <div className="w-8 h-8 rounded-full bg-gray-800/50 flex items-center justify-center">
+                          <Icon className="text-gray-300" />
                         </div>
                         <span>{label}</span>
                       </div>
@@ -91,27 +91,27 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-blue-500/20">
-                  <p className="text-blue-200 italic">
+                <div className="pt-4 border-t border-gray-500/20">
+                  <p className="text-gray-200 italic">
                     "I found my way into tech by focusing on people first—now, I build systems that do the same."
                   </p>
                 </div>
               </motion.div>
 
               <motion.div 
-                className="lg:w-1/2 bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border border-blue-500/20 max-w-md"
+                className="lg:w-1/2 bg-gradient-to-b from-gray-900 to-black rounded-xl overflow-hidden shadow-2xl border border-gray-500/20 max-w-md"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <div className="flex items-center justify-between p-3 border-b border-gray-700/50 bg-gradient-to-r from-gray-900 to-gray-800">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-blue-400/30 ring-offset-2 ring-offset-gray-900">
+                    <div className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-gray-400/30 ring-offset-2 ring-offset-gray-900">
                       <img src={imageLogo} alt="Caleb's Logo" className="w-full h-full object-cover" />
                     </div>
                     <div>
                       <p className="text-white text-sm font-medium">caleb.harp</p>
-                      <p className="text-xs text-blue-400">Software Engineer</p>
+                      <p className="text-xs text-gray-400">Software Engineer</p>
                     </div>
                   </div>
                   <div className="text-gray-300 bg-gray-800/50 px-2 py-1 rounded-full text-xs hover:bg-gray-700/50 transition-colors cursor-pointer">Follow</div>
@@ -175,7 +175,7 @@ const About = () => {
                         <SiGoogle className="text-[10px]" style={{ color: "#4285F4" }} />
                       </span>
                     </span>
-                    Liked by <span className="font-semibold text-white ml-1">nvidia</span> and <span className="font-semibold text-white ml-1">others</span>
+                    <span>Liked by <span className="font-semibold text-white">nvidia</span> and <span className="font-semibold text-white">others</span></span>
                   </p>
                 </div>
 
@@ -183,9 +183,9 @@ const About = () => {
                   <p className="text-sm">
                     <span className="font-medium text-white">caleb.harp</span>{" "}
                     <span className="text-gray-300">When I'm not coding, you'll find me exploring new places, and connecting with amazing people. Life is about balance!</span> 
-                    <span className="text-blue-400"> #lifebeyondcode #exploration #balance</span>
+                    <span className="text-gray-400"> #lifebeyondcode #exploration #balance</span>
                   </p>
-                  <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">2 days ago</p>
+                  <p className="text-xs text-gray-500 mt-2 uppercase tracking-wide">1+ year ago</p>
                 </div>
               </motion.div>
             </div>
