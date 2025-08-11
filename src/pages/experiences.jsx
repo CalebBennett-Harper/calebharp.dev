@@ -156,14 +156,14 @@ const experiences = [
     company: "Locus",
     position: "Founder & CEO",
     type: "Full-time",
-    duration: "Jun 2025 - Present · 2 mos",
+    duration: "Jun 2025 - Present",
     location: "New York City Metropolitan Area"
   },
   {
     company: "Sixth Street",
     position: "Software Engineer Intern",
     type: "Internship",
-    duration: "Apr 2025 - Present",
+    duration: "Jun 2025 - Aug 2025 · 3 mos",
     location: "New York City Metropolitan Area",
     onsite: "On-site",
     program: "Summer 2025",
